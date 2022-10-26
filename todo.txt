@@ -1,0 +1,16 @@
+Business Understaning
+Data Understanding
+    Univariate
+    Bivariate
+        Multivariate
+    Analysis
+Data Preparation
+    Data cleaning/Transformation
+    Feature engineering
+    Feature selection
+    Sampling
+        Evaluation of impact
+            Precision
+            Recall
+            F-measure
+            Auc
