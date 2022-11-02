@@ -1,0 +1,89 @@
+==============
+accounts : 4500 objects
+--------------
+ #   Column       Non-Null Count  Dtype 
+---  ------       --------------  ----- 
+ 0   account_id   4500 non-null   int64 
+ 1   district_id  4500 non-null   int64 
+ 2   frequency    4500 non-null   object
+ 3   date         4500 non-null   int64 
+
+==============
+clients : 5369 objects
+--------------
+ #   Column        Non-Null Count  Dtype
+---  ------        --------------  -----
+ 0   client_id     5369 non-null   int64
+ 1   birth_number  5369 non-null   int64
+ 2   district_id   5369 non-null   int64
+
+==============
+disp : 5369 objects
+--------------
+ #   Column      Non-Null Count  Dtype 
+---  ------      --------------  ----- 
+ 0   disp_id     5369 non-null   int64 
+ 1   client_id   5369 non-null   int64 
+ 2   account_id  5369 non-null   int64 
+ 3   type        5369 non-null   object
+
+==============
+districts : 77 objects
+--------------
+ #   Column                                             Non-Null Count  Dtype  
+---  ------                                             --------------  -----  
+ 0   code                                               77 non-null     int64  
+ 1   name                                               77 non-null     object 
+ 2   region                                             77 non-null     object 
+ 3   no. of inhabitants                                 77 non-null     int64  
+ 4   no. of municipalities with inhabitants < 499       77 non-null     int64  
+ 5   no. of municipalities with inhabitants 500-1999    77 non-null     int64  
+ 6   no. of municipalities with inhabitants 2000-9999   77 non-null     int64  
+ 7   no. of municipalities with inhabitants >10000      77 non-null     int64  
+ 8   no. of cities                                      77 non-null     int64  
+ 9   ratio of urban inhabitants                         77 non-null     float64
+ 10  average salary                                     77 non-null     int64  
+ 11  unemploymant rate '95                              77 non-null     object 
+ 12  unemploymant rate '96                              77 non-null     float64
+ 13  no. of enterpreneurs per 1000 inhabitants          77 non-null     int64  
+ 14  no. of commited crimes '95                         77 non-null     object 
+ 15  no. of commited crimes '96                         77 non-null     int64  
+
+==============
+transactions_dev : 396685/1056320 objects
+--------------
+ #   Column      Non-Null Count   Dtype  
+---  ------      --------------   -----  
+ 0   trans_id    396685 non-null  int64  
+ 1   account_id  396685 non-null  int64  
+ 2   date        396685 non-null  int64  
+ 3   type        396685 non-null  object 
+ 4   operation   325924 non-null  object 
+ 5   amount      396685 non-null  float64
+ 6   balance     396685 non-null  float64
+ 7   k_symbol    211441 non-null  object 
+ 8   bank        97242 non-null   object 
+ 9   account     102229 non-null  float64
+
+==============
+cards_dev : 177/892 objects
+--------------
+ #   Column   Non-Null Count  Dtype 
+---  ------   --------------  ----- 
+ 0   card_id  177 non-null    int64 
+ 1   disp_id  177 non-null    int64 
+ 2   type     177 non-null    object
+ 3   issued   177 non-null    int64 
+
+==============
+loans_dev
+--------------
+ #   Column      Non-Null Count  Dtype
+---  ------      --------------  -----
+ 0   loan_id     328 non-null    int64
+ 1   account_id  328 non-null    int64
+ 2   date        328 non-null    int64
+ 3   amount      328 non-null    int64
+ 4   duration    328 non-null    int64
+ 5   payments    328 non-null    int64
+ 6   status      328 non-null    int64
