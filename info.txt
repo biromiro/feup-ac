@@ -87,3 +87,40 @@ loans_dev
  4   duration    328 non-null    int64
  5   payments    328 non-null    int64
  6   status      328 non-null    int64
+
+
+
+
+
+
+
+
+
+Table account has columns ['account_id', 'district_id', 'frequency', 'date']
+	Column frequency can have values ['monthly issuance' 'issuance after transaction' 'weekly issuance']
+====================
+Table client has columns ['client_id', 'birth_number', 'district_id']
+====================
+Table disp has columns ['disp_id', 'client_id', 'account_id', 'type']
+	Column type can have values ['OWNER' 'DISPONENT']
+====================
+Table district has columns ['code ', 'name ', 'region', 'no. of inhabitants', 'no. of municipalities with inhabitants < 499 ', 'no. of municipalities with inhabitants 500-1999', 'no. of municipalities with inhabitants 2000-9999 ', 'no. of municipalities with inhabitants >10000 ', 'no. of cities ', 'ratio of urban inhabitants ', 'average salary ', "unemploymant rate '95 ", "unemploymant rate '96 ", 'no. of enterpreneurs per 1000 inhabitants ', "no. of commited crimes '95 ", "no. of commited crimes '96 "]
+	Column region can have values ['Prague' 'central Bohemia' 'south Bohemia' 'west Bohemia' 'north Bohemia'
+ 'east Bohemia' 'south Moravia' 'north Moravia']
+	Column no. of municipalities with inhabitants >10000  can have values [1 2 3 0 4 5]
+====================
+Table card has columns ['card_id', 'disp_id', 'type', 'issued']
+	Column type can have values ['classic' 'junior' 'gold']
+====================
+Table transaction has columns ['trans_id', 'account_id', 'date', 'type', 'operation', 'amount', 'balance', 'k_symbol', 'bank', 'account']
+	Column type can have values ['credit' 'withdrawal' 'withdrawal in cash']
+	Column operation can have values ['credit in cash' 'collection from another bank' nan 'withdrawal in cash'
+ 'remittance to another bank' 'credit card withdrawal']
+	Column k_symbol can have values [nan 'interest credited' ' ' 'household' 'payment for statement'
+ 'insurrance payment' 'sanction interest if negative balance'
+ 'old-age pension']
+====================
+Table loan has columns ['loan_id', 'account_id', 'date', 'amount', 'duration', 'payments', 'status']
+	Column duration can have values [12 36 60 24 48]
+	Column status can have values [-1  1]
+====================
