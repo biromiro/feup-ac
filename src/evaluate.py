@@ -36,10 +36,7 @@ comp.set_index('loan_id', inplace=True)
 comp = comp[['status']]
 
 
-def run(predfilename):
-    df = pd.read_csv(
-        f'{os.path.dirname(__file__)}/output/predictive/{predfilename}.csv')
-    df.set_index('Id', inplace=True)
+def evaluate_result(df):
     together = pd.merge(df, vals, left_index=True, right_index=True)
 
     if (len(together) != len(comp)):
@@ -53,6 +50,13 @@ def run(predfilename):
     print(
         f"You'd think it's something close to {incomplete} but it's actually {real}.")
     return real
+
+
+def run(predfilename):
+    df = pd.read_csv(
+        f'{os.path.dirname(__file__)}/output/predictive/{predfilename}.csv')
+    df.set_index('Id', inplace=True)
+    return evaluate_result(df)
 
 
 if __name__ == '__main__':
