@@ -27,8 +27,13 @@ dev.set_index('loan_id', inplace=True)
 dev = dev[['status']]
 
 together1 = pd.merge(vals, dev, left_index=True, right_index=True)
-if (len(together1.query('status_x != status_y')) != 0):
+if (len(together1.query('status_x != status_y')) != 0 and len(together1) != len(dev)):
     raise Exception("Dataset is not the same as the one used for training")
+
+comp = pd.read_csv(
+    f'{os.path.dirname(__file__)}/data/loan_comp.csv', sep=";")
+comp.set_index('loan_id', inplace=True)
+comp = comp[['status']]
 
 
 def run(predfilename):
@@ -36,6 +41,11 @@ def run(predfilename):
         f'{os.path.dirname(__file__)}/output/predictive/{predfilename}.csv')
     df.set_index('Id', inplace=True)
     together = pd.merge(df, vals, left_index=True, right_index=True)
+
+    if (len(together) != len(comp)):
+        raise Exception(
+            f"Dataset is not the same as the predicted one: comp: {len(comp)} together: {len(together)} df:{len(df)}")
+
     predvals = together['Predicted'].values
     status = together['status'].values
     incomplete = roc_auc_score(status[:177], predvals[:177])
