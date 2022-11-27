@@ -52,6 +52,7 @@ def run(predfilename):
     real = roc_auc_score(status, predvals)
     print(
         f"You'd think it's something close to {incomplete} but it's actually {real}.")
+    return real
 
 
 if __name__ == '__main__':
